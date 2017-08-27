@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity DealerInfo.
+    -->
+    <changeSet id="20170827010347-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="product_info_id"
+                                 baseTableName="dealer_info"
+                                 constraintName="fk_dealer_info_product_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="dealer_info"
+                                 constraintName="fk_dealer_info_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+    </changeSet>
+</databaseChangeLog>
