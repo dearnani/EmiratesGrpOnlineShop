@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.home.title">Dealer Infos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-dealer-info" [routerLink]="['/', { outlets: { popup: ['dealer-info-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.home.createLabel">
+            Create new Dealer Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="dealerInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerCode">Dealer Code</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerName">Dealer Name</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dearLocation">Dear Location</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerStatus">Dealer Status</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.productInfo">Product Info</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.location">Location</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dealerInfo of dealerInfos ;trackBy: trackId">
+                <td><a [routerLink]="['../dealer-info', dealerInfo.id ]">{{dealerInfo.id}}</a></td>
+                <td>{{dealerInfo.dealerCode}}</td>
+                <td>{{dealerInfo.dealerName}}</td>
+                <td>{{dealerInfo.dearLocation}}</td>
+                <td jhiTranslate="{{'emiratesGrpOnlineShopApp.DealerStatus.' + dealerInfo.dealerStatus}}">{{dealerInfo.dealerStatus}}</td>
+                <td>
+                    <div *ngIf="dealerInfo.productInfo">
+                        <a [routerLink]="['../product-info', dealerInfo.productInfo?.id ]" >{{dealerInfo.productInfo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="dealerInfo.location">
+                        <a [routerLink]="['../location', dealerInfo.location?.id ]" >{{dealerInfo.location?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../dealer-info', dealerInfo.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dealer-info/'+ dealerInfo.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'dealer-info/'+ dealerInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

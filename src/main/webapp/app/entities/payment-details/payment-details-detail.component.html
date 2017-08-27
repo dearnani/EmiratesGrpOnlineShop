@@ -1,0 +1,45 @@
+
+<div *ngIf="paymentDetails">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.detail.title">Payment Details</span> {{paymentDetails.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.paymentMode">Payment Mode</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.PaymentChannel.' + paymentDetails.paymentMode}}">{{paymentDetails.paymentMode}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.paymentStatus">Payment Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.PaymentStatus.' + paymentDetails.paymentStatus}}">{{paymentDetails.paymentStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.oderNumber">Oder Number</span></dt>
+        <dd>
+            <span>{{paymentDetails.oderNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.oderDate">Oder Date</span></dt>
+        <dd>
+            <span>{{paymentDetails.oderDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.numberOfProducts">Number Of Products</span></dt>
+        <dd>
+            <span>{{paymentDetails.numberOfProducts}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.totalAmount">Total Amount</span></dt>
+        <dd>
+            <span>{{paymentDetails.totalAmount}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'payment-details/'+ paymentDetails.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

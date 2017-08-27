@@ -1,0 +1,59 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "paymentDetails",
+            "otherEntityName": "orderMangement",
+            "otherEntityRelationshipName": "paymentDetails"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "paymentMode",
+            "fieldType": "PaymentChannel",
+            "fieldValues": "CASHON_DELIVERY,ONLINE_CREDITCARD,ONLINE_DEBITCARD",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "paymentStatus",
+            "fieldType": "PaymentStatus",
+            "fieldValues": "SUCCESS,FAIL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "oderNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "oderDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "numberOfProducts",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "totalAmount",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170827010348",
+    "entityTableName": "payment_details",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

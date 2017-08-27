@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "customerInfo",
+            "otherEntityName": "orderMangement",
+            "otherEntityRelationshipName": "customerInfo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "aliasName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lastLogin",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170827010350",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "customer_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

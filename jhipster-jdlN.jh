@@ -1,0 +1,121 @@
+
+
+entity ProductInfo {
+	prouctCode String required,
+	proudctName String,
+    productType ProductType required,
+    productDescription String,
+    productStatus ProductStatus required
+  }
+
+enum ProductType {
+    ELECTRONICS, HOMEAPPLIANCES, FURNITURE, FABRICS
+}
+
+enum ProductStatus {
+	AVAILABLE, NOT_AVAILABLE, BLOCKED, DELETED, EXPIRED
+}
+
+entity DealerInfo {
+
+	dealerCode String required,
+    dealerName String,
+    dearLocation String,
+    dealerStatus DealerStatus required 
+    
+}
+
+enum DealerStatus
+	{ ACIVE, INACTIVE, BLOKED }
+
+entity PaymentDetails {
+	paymentMode PaymentChannel required,
+    paymentStatus PaymentStatus required,    
+    oderNumber String required,
+    oderDate ZonedDateTime,
+    numberOfProducts Integer required,
+    totalAmount Long required
+  }
+
+enum PaymentChannel {
+	CASHON_DELIVERY, ONLINE_CREDITCARD, ONLINE_DEBITCARD
+}
+
+enum PaymentStatus {
+	SUCCESS, FAIL
+}
+enum OrderStatus {
+	SAVE, SUCESS, DELIVERY_FAIL, PAYMENT_FAIL, COMPLETE
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String required,
+	city String required,
+	stateProvince String,
+    country String
+}
+
+/**
+ * The Employee entity.
+ */
+entity CustomerInfo {
+	aliasName String required,
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String required,
+	lastLogin ZonedDateTime
+}
+
+entity OrderMangement {
+    orderId Long,
+    productCode Long,
+	dealerCode String,
+    assignedPrice BigDecimal,
+    dearLocation String,
+    orderStatus OrderStatus,
+    paymentStatus PaymentStatus,
+  }
+
+entity DeliverManagement {
+	
+    orderNumber Long,
+    deliveryStatus DeliveryStatus,
+    
+
+}
+
+enum DeliveryStatus {
+	
+    DISPATCHED, TRANSIT, RETURNED, DOORLOCKED, DELIVERED, UNDELIVERED
+	
+}
+
+relationship OneToMany {
+	ProductInfo{dealerProductInfo} to DealerInfo
+}
+relationship OneToMany {
+	Location{dealerLocation} to DealerInfo
+}
+
+relationship OneToMany {
+	Location{custLocation} to CustomerInfo
+}
+
+relationship OneToMany {
+	Location{deliveryLocation} to DeliverManagement
+}
+
+relationship OneToMany {
+	PaymentDetails{paymentDetails} to OrderMangement
+}
+relationship OneToMany {
+	ProductInfo{productInfo} to OrderMangement
+}
+
+relationship OneToMany {
+	CustomerInfo{customerInfo} to OrderMangement
+}

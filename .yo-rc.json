@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.emrgrp.ecom.shopcart",
+      "nativeLanguage": "ar-ly"
+    },
+    "jhipsterVersion": "4.7.0",
+    "baseName": "EmiratesGrpOnlineShop",
+    "packageName": "com.emrgrp.ecom.shopcart",
+    "packageFolder": "com/emrgrp/ecom/shopcart",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "08107914e3d0bfd7d208b42462faff9541aa83cf",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "yarn",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "ar-ly",
+    "languages": [
+      "ar-ly",
+      "en",
+      "hi"
+    ]
+  }
+}

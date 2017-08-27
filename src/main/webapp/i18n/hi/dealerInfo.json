@@ -1,0 +1,26 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "dealerInfo" : {
+            "home": {
+                "title": "DealerInfos",
+                "createLabel": "नया Dealer Info बनाएँ",
+                "createOrEditLabel": "Dealer Info बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Dealer Info [identifier: {{ param }}] तैयार है",
+            "updated": "एक Dealer Info [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Dealer Info [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Dealer Info [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Dealer Info"
+            },
+            "dealerCode": "Dealer Code",
+            "dealerName": "Dealer Name",
+            "dearLocation": "Dear Location",
+            "dealerStatus": "Dealer Status",
+            "productInfo": "Product Info",
+            "location": "Location"
+        }
+    }
+}

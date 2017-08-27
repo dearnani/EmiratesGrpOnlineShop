@@ -1,0 +1,86 @@
+<div>
+    <h2>
+        <span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.home.title">Order Mangements</span>
+        <button class="btn btn-primary float-right jh-create-entity create-order-mangement" [routerLink]="['/', { outlets: { popup: ['order-mangement-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.home.createLabel">
+            Create new Order Mangement
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="orderMangements">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderId">Order Id</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productCode">Product Code</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dealerCode">Dealer Code</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.assignedPrice">Assigned Price</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dearLocation">Dear Location</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderStatus">Order Status</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentStatus">Payment Status</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productInfo">Product Info</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentDetails">Payment Details</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.customerInfo">Customer Info</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let orderMangement of orderMangements ;trackBy: trackId">
+                <td><a [routerLink]="['../order-mangement', orderMangement.id ]">{{orderMangement.id}}</a></td>
+                <td>{{orderMangement.orderId}}</td>
+                <td>{{orderMangement.productCode}}</td>
+                <td>{{orderMangement.dealerCode}}</td>
+                <td>{{orderMangement.assignedPrice}}</td>
+                <td>{{orderMangement.dearLocation}}</td>
+                <td jhiTranslate="{{'emiratesGrpOnlineShopApp.OrderStatus.' + orderMangement.orderStatus}}">{{orderMangement.orderStatus}}</td>
+                <td jhiTranslate="{{'emiratesGrpOnlineShopApp.PaymentStatus.' + orderMangement.paymentStatus}}">{{orderMangement.paymentStatus}}</td>
+                <td>
+                    <div *ngIf="orderMangement.productInfo">
+                        <a [routerLink]="['../product-info', orderMangement.productInfo?.id ]" >{{orderMangement.productInfo?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orderMangement.paymentDetails">
+                        <a [routerLink]="['../payment-details', orderMangement.paymentDetails?.id ]" >{{orderMangement.paymentDetails?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="orderMangement.customerInfo">
+                        <a [routerLink]="['../customer-info', orderMangement.customerInfo?.id ]" >{{orderMangement.customerInfo?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../order-mangement', orderMangement.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'order-mangement/'+ orderMangement.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'order-mangement/'+ orderMangement.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

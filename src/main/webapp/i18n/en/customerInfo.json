@@ -1,0 +1,28 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "customerInfo" : {
+            "home": {
+                "title": "Customer Infos",
+                "createLabel": "Create a new Customer Info",
+                "createOrEditLabel": "Create or edit a Customer Info"
+            },
+            "created": "A new Customer Info is created with identifier {{ param }}",
+            "updated": "A Customer Info is updated with identifier {{ param }}",
+            "deleted": "A Customer Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Customer Info {{ id }}?"
+            },
+            "detail": {
+                "title": "Customer Info"
+            },
+            "aliasName": "Alias Name",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "lastLogin": "Last Login",
+            "location": "Location",
+            "customerInfo": "Customer Info"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "ProductType" : {
+            "null": "",
+            "ELECTRONICS": "ELECTRONICS",
+            "HOMEAPPLIANCES": "HOMEAPPLIANCES",
+            "FURNITURE": "FURNITURE",
+            "FABRICS": "FABRICS"
+        }
+    }
+}

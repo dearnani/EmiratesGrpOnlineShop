@@ -1,0 +1,27 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "productInfo" : {
+            "home": {
+                "title": "ProductInfos",
+                "createLabel": "नया Product Info बनाएँ",
+                "createOrEditLabel": "Product Info बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Product Info [identifier: {{ param }}] तैयार है",
+            "updated": "एक Product Info [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Product Info [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Product Info [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Product Info"
+            },
+            "prouctCode": "Prouct Code",
+            "proudctName": "Proudct Name",
+            "productType": "Product Type",
+            "productDescription": "Product Description",
+            "productStatus": "Product Status",
+            "dealerProductInfo": "Dealer Product Info",
+            "productInfo": "Product Info"
+        }
+    }
+}

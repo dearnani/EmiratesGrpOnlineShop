@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "productInfo",
+            "otherEntityName": "productInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dealerCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dealerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dearLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dealerStatus",
+            "fieldType": "DealerStatus",
+            "fieldValues": "ACIVE,INACTIVE,BLOKED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170827010347",
+    "entityTableName": "dealer_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

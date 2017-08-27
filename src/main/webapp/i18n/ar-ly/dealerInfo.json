@@ -1,0 +1,26 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "dealerInfo" : {
+            "home": {
+                "title": "Dealer Infos",
+                "createLabel": "Create a new Dealer Info",
+                "createOrEditLabel": "Create or edit a Dealer Info"
+            },
+            "created": "A new Dealer Info is created with identifier {{ param }}",
+            "updated": "A Dealer Info is updated with identifier {{ param }}",
+            "deleted": "A Dealer Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dealer Info {{ id }}?"
+            },
+            "detail": {
+                "title": "Dealer Info"
+            },
+            "dealerCode": "Dealer Code",
+            "dealerName": "Dealer Name",
+            "dearLocation": "Dear Location",
+            "dealerStatus": "Dealer Status",
+            "productInfo": "Product Info",
+            "location": "Location"
+        }
+    }
+}

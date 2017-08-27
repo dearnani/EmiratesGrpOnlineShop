@@ -1,0 +1,51 @@
+
+<div *ngIf="customerInfo">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.detail.title">Customer Info</span> {{customerInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.aliasName">Alias Name</span></dt>
+        <dd>
+            <span>{{customerInfo.aliasName}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.firstName">First Name</span></dt>
+        <dd>
+            <span>{{customerInfo.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{customerInfo.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.email">Email</span></dt>
+        <dd>
+            <span>{{customerInfo.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.phoneNumber">Phone Number</span></dt>
+        <dd>
+            <span>{{customerInfo.phoneNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.lastLogin">Last Login</span></dt>
+        <dd>
+            <span>{{customerInfo.lastLogin | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.location">Location</span></dt>
+        <dd>
+            <div *ngIf="customerInfo.location">
+                <a [routerLink]="['/location', customerInfo.location?.id]">{{customerInfo.location?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'customer-info/'+ customerInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

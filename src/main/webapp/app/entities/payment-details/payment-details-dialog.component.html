@@ -1,0 +1,100 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myPaymentDetailsLabel" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.home.createOrEditLabel">Create or edit a Payment Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!paymentDetails.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="paymentDetails.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.paymentMode" for="field_paymentMode">Payment Mode</label>
+            <select class="form-control" name="paymentMode" [(ngModel)]="paymentDetails.paymentMode" id="field_paymentMode"  required>
+                <option value="CASHON_DELIVERY">{{'emiratesGrpOnlineShopApp.PaymentChannel.CASHON_DELIVERY' | translate}}</option>
+                <option value="ONLINE_CREDITCARD">{{'emiratesGrpOnlineShopApp.PaymentChannel.ONLINE_CREDITCARD' | translate}}</option>
+                <option value="ONLINE_DEBITCARD">{{'emiratesGrpOnlineShopApp.PaymentChannel.ONLINE_DEBITCARD' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.paymentMode?.dirty && editForm.controls.paymentMode?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.paymentMode?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.paymentStatus" for="field_paymentStatus">Payment Status</label>
+            <select class="form-control" name="paymentStatus" [(ngModel)]="paymentDetails.paymentStatus" id="field_paymentStatus"  required>
+                <option value="SUCCESS">{{'emiratesGrpOnlineShopApp.PaymentStatus.SUCCESS' | translate}}</option>
+                <option value="FAIL">{{'emiratesGrpOnlineShopApp.PaymentStatus.FAIL' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.paymentStatus?.dirty && editForm.controls.paymentStatus?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.paymentStatus?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.oderNumber" for="field_oderNumber">Oder Number</label>
+            <input type="text" class="form-control" name="oderNumber" id="field_oderNumber"
+                [(ngModel)]="paymentDetails.oderNumber" required />
+            <div [hidden]="!(editForm.controls.oderNumber?.dirty && editForm.controls.oderNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.oderNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.oderDate" for="field_oderDate">Oder Date</label>
+            <div class="d-flex">
+                <input id="field_oderDate" type="datetime-local" class="form-control" name="oderDate" [(ngModel)]="paymentDetails.oderDate"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.numberOfProducts" for="field_numberOfProducts">Number Of Products</label>
+            <input type="number" class="form-control" name="numberOfProducts" id="field_numberOfProducts"
+                [(ngModel)]="paymentDetails.numberOfProducts" required />
+            <div [hidden]="!(editForm.controls.numberOfProducts?.dirty && editForm.controls.numberOfProducts?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.numberOfProducts?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.numberOfProducts?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.paymentDetails.totalAmount" for="field_totalAmount">Total Amount</label>
+            <input type="number" class="form-control" name="totalAmount" id="field_totalAmount"
+                [(ngModel)]="paymentDetails.totalAmount" required />
+            <div [hidden]="!(editForm.controls.totalAmount?.dirty && editForm.controls.totalAmount?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.totalAmount?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.totalAmount?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

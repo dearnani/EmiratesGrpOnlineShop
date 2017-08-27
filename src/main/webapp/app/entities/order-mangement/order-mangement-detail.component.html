@@ -1,0 +1,67 @@
+
+<div *ngIf="orderMangement">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.detail.title">Order Mangement</span> {{orderMangement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderId">Order Id</span></dt>
+        <dd>
+            <span>{{orderMangement.orderId}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productCode">Product Code</span></dt>
+        <dd>
+            <span>{{orderMangement.productCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dealerCode">Dealer Code</span></dt>
+        <dd>
+            <span>{{orderMangement.dealerCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.assignedPrice">Assigned Price</span></dt>
+        <dd>
+            <span>{{orderMangement.assignedPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dearLocation">Dear Location</span></dt>
+        <dd>
+            <span>{{orderMangement.dearLocation}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderStatus">Order Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.OrderStatus.' + orderMangement.orderStatus}}">{{orderMangement.orderStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentStatus">Payment Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.PaymentStatus.' + orderMangement.paymentStatus}}">{{orderMangement.paymentStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productInfo">Product Info</span></dt>
+        <dd>
+            <div *ngIf="orderMangement.productInfo">
+                <a [routerLink]="['/product-info', orderMangement.productInfo?.id]">{{orderMangement.productInfo?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentDetails">Payment Details</span></dt>
+        <dd>
+            <div *ngIf="orderMangement.paymentDetails">
+                <a [routerLink]="['/payment-details', orderMangement.paymentDetails?.id]">{{orderMangement.paymentDetails?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.customerInfo">Customer Info</span></dt>
+        <dd>
+            <div *ngIf="orderMangement.customerInfo">
+                <a [routerLink]="['/customer-info', orderMangement.customerInfo?.id]">{{orderMangement.customerInfo?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'order-mangement/'+ orderMangement.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

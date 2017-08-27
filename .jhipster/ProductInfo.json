@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "dealerProductInfo",
+            "otherEntityName": "dealerInfo",
+            "otherEntityRelationshipName": "productInfo"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "productInfo",
+            "otherEntityName": "orderMangement",
+            "otherEntityRelationshipName": "productInfo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "prouctCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "proudctName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productType",
+            "fieldType": "ProductType",
+            "fieldValues": "ELECTRONICS,HOMEAPPLIANCES,FURNITURE,FABRICS",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "productDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productStatus",
+            "fieldType": "ProductStatus",
+            "fieldValues": "AVAILABLE,NOT_AVAILABLE,BLOCKED,DELETED,EXPIRED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170827010346",
+    "entityTableName": "product_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

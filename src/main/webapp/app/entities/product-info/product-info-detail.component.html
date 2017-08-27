@@ -1,0 +1,41 @@
+
+<div *ngIf="productInfo">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.detail.title">Product Info</span> {{productInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.prouctCode">Prouct Code</span></dt>
+        <dd>
+            <span>{{productInfo.prouctCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.proudctName">Proudct Name</span></dt>
+        <dd>
+            <span>{{productInfo.proudctName}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productType">Product Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.ProductType.' + productInfo.productType}}">{{productInfo.productType}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productDescription">Product Description</span></dt>
+        <dd>
+            <span>{{productInfo.productDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productStatus">Product Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.ProductStatus.' + productInfo.productStatus}}">{{productInfo.productStatus}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'product-info/'+ productInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

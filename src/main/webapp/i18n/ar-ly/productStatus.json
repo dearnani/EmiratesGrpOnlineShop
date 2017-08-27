@@ -1,0 +1,12 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "ProductStatus" : {
+            "null": "",
+            "AVAILABLE": "AVAILABLE",
+            "NOT_AVAILABLE": "NOT_AVAILABLE",
+            "BLOCKED": "BLOCKED",
+            "DELETED": "DELETED",
+            "EXPIRED": "EXPIRED"
+        }
+    }
+}

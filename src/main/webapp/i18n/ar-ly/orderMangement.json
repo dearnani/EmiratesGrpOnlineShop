@@ -1,0 +1,30 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "orderMangement" : {
+            "home": {
+                "title": "Order Mangements",
+                "createLabel": "Create a new Order Mangement",
+                "createOrEditLabel": "Create or edit a Order Mangement"
+            },
+            "created": "A new Order Mangement is created with identifier {{ param }}",
+            "updated": "A Order Mangement is updated with identifier {{ param }}",
+            "deleted": "A Order Mangement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Order Mangement {{ id }}?"
+            },
+            "detail": {
+                "title": "Order Mangement"
+            },
+            "orderId": "Order Id",
+            "productCode": "Product Code",
+            "dealerCode": "Dealer Code",
+            "assignedPrice": "Assigned Price",
+            "dearLocation": "Dear Location",
+            "orderStatus": "Order Status",
+            "paymentStatus": "Payment Status",
+            "productInfo": "Product Info",
+            "paymentDetails": "Payment Details",
+            "customerInfo": "Customer Info"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "orderMangement" : {
+            "home": {
+                "title": "OrderMangements",
+                "createLabel": "नया Order Mangement बनाएँ",
+                "createOrEditLabel": "Order Mangement बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Order Mangement [identifier: {{ param }}] तैयार है",
+            "updated": "एक Order Mangement [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Order Mangement [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Order Mangement [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Order Mangement"
+            },
+            "orderId": "Order Id",
+            "productCode": "Product Code",
+            "dealerCode": "Dealer Code",
+            "assignedPrice": "Assigned Price",
+            "dearLocation": "Dear Location",
+            "orderStatus": "Order Status",
+            "paymentStatus": "Payment Status",
+            "productInfo": "Product Info",
+            "paymentDetails": "Payment Details",
+            "customerInfo": "Customer Info"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "deliverManagement" : {
+            "home": {
+                "title": "DeliverManagements",
+                "createLabel": "नया Deliver Management बनाएँ",
+                "createOrEditLabel": "Deliver Management बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Deliver Management [identifier: {{ param }}] तैयार है",
+            "updated": "एक Deliver Management [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Deliver Management [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Deliver Management [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Deliver Management"
+            },
+            "orderNumber": "Order Number",
+            "deliveryStatus": "Delivery Status",
+            "location": "Location"
+        }
+    }
+}

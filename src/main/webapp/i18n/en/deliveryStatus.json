@@ -1,0 +1,13 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "DeliveryStatus" : {
+            "null": "",
+            "DISPATCHED": "DISPATCHED",
+            "TRANSIT": "TRANSIT",
+            "RETURNED": "RETURNED",
+            "DOORLOCKED": "DOORLOCKED",
+            "DELIVERED": "DELIVERED",
+            "UNDELIVERED": "UNDELIVERED"
+        }
+    }
+}

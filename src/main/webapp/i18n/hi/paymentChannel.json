@@ -1,0 +1,10 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "PaymentChannel" : {
+            "null": "",
+            "CASHON_DELIVERY": "CASHON_DELIVERY",
+            "ONLINE_CREDITCARD": "ONLINE_CREDITCARD",
+            "ONLINE_DEBITCARD": "ONLINE_DEBITCARD"
+        }
+    }
+}

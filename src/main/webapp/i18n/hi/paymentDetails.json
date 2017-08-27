@@ -1,0 +1,27 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "paymentDetails" : {
+            "home": {
+                "title": "PaymentDetails",
+                "createLabel": "नया Payment Details बनाएँ",
+                "createOrEditLabel": "Payment Details बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Payment Details [identifier: {{ param }}] तैयार है",
+            "updated": "एक Payment Details [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Payment Details [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Payment Details [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Payment Details"
+            },
+            "paymentMode": "Payment Mode",
+            "paymentStatus": "Payment Status",
+            "oderNumber": "Oder Number",
+            "oderDate": "Oder Date",
+            "numberOfProducts": "Number Of Products",
+            "totalAmount": "Total Amount",
+            "paymentDetails": "Payment Details"
+        }
+    }
+}

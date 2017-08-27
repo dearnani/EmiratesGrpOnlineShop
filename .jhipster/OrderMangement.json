@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "productInfo",
+            "otherEntityName": "productInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "paymentDetails",
+            "otherEntityName": "paymentDetails",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "customerInfo",
+            "otherEntityName": "customerInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "orderId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productCode",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dealerCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "assignedPrice",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dearLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "orderStatus",
+            "fieldType": "OrderStatus",
+            "fieldValues": "SAVE,SUCESS,DELIVERY_FAIL,PAYMENT_FAIL,COMPLETE"
+        },
+        {
+            "fieldName": "paymentStatus",
+            "fieldType": "PaymentStatus",
+            "fieldValues": "SUCCESS,FAIL"
+        }
+    ],
+    "changelogDate": "20170827010351",
+    "entityTableName": "order_mangement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

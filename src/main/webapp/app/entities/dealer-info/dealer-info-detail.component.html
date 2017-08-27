@@ -1,0 +1,49 @@
+
+<div *ngIf="dealerInfo">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.detail.title">Dealer Info</span> {{dealerInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerCode">Dealer Code</span></dt>
+        <dd>
+            <span>{{dealerInfo.dealerCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerName">Dealer Name</span></dt>
+        <dd>
+            <span>{{dealerInfo.dealerName}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dearLocation">Dear Location</span></dt>
+        <dd>
+            <span>{{dealerInfo.dearLocation}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.dealerStatus">Dealer Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.DealerStatus.' + dealerInfo.dealerStatus}}">{{dealerInfo.dealerStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.productInfo">Product Info</span></dt>
+        <dd>
+            <div *ngIf="dealerInfo.productInfo">
+                <a [routerLink]="['/product-info', dealerInfo.productInfo?.id]">{{dealerInfo.productInfo?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.dealerInfo.location">Location</span></dt>
+        <dd>
+            <div *ngIf="dealerInfo.location">
+                <a [routerLink]="['/location', dealerInfo.location?.id]">{{dealerInfo.location?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'dealer-info/'+ dealerInfo.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

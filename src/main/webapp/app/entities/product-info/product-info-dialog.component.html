@@ -1,0 +1,77 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProductInfoLabel" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.home.createOrEditLabel">Create or edit a Product Info</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!productInfo.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="productInfo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.prouctCode" for="field_prouctCode">Prouct Code</label>
+            <input type="text" class="form-control" name="prouctCode" id="field_prouctCode"
+                [(ngModel)]="productInfo.prouctCode" required />
+            <div [hidden]="!(editForm.controls.prouctCode?.dirty && editForm.controls.prouctCode?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.prouctCode?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.proudctName" for="field_proudctName">Proudct Name</label>
+            <input type="text" class="form-control" name="proudctName" id="field_proudctName"
+                [(ngModel)]="productInfo.proudctName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productType" for="field_productType">Product Type</label>
+            <select class="form-control" name="productType" [(ngModel)]="productInfo.productType" id="field_productType"  required>
+                <option value="ELECTRONICS">{{'emiratesGrpOnlineShopApp.ProductType.ELECTRONICS' | translate}}</option>
+                <option value="HOMEAPPLIANCES">{{'emiratesGrpOnlineShopApp.ProductType.HOMEAPPLIANCES' | translate}}</option>
+                <option value="FURNITURE">{{'emiratesGrpOnlineShopApp.ProductType.FURNITURE' | translate}}</option>
+                <option value="FABRICS">{{'emiratesGrpOnlineShopApp.ProductType.FABRICS' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.productType?.dirty && editForm.controls.productType?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.productType?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productDescription" for="field_productDescription">Product Description</label>
+            <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                [(ngModel)]="productInfo.productDescription"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.productInfo.productStatus" for="field_productStatus">Product Status</label>
+            <select class="form-control" name="productStatus" [(ngModel)]="productInfo.productStatus" id="field_productStatus"  required>
+                <option value="AVAILABLE">{{'emiratesGrpOnlineShopApp.ProductStatus.AVAILABLE' | translate}}</option>
+                <option value="NOT_AVAILABLE">{{'emiratesGrpOnlineShopApp.ProductStatus.NOT_AVAILABLE' | translate}}</option>
+                <option value="BLOCKED">{{'emiratesGrpOnlineShopApp.ProductStatus.BLOCKED' | translate}}</option>
+                <option value="DELETED">{{'emiratesGrpOnlineShopApp.ProductStatus.DELETED' | translate}}</option>
+                <option value="EXPIRED">{{'emiratesGrpOnlineShopApp.ProductStatus.EXPIRED' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.productStatus?.dirty && editForm.controls.productStatus?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.productStatus?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "customerInfo" : {
+            "home": {
+                "title": "CustomerInfos",
+                "createLabel": "नया Customer Info बनाएँ",
+                "createOrEditLabel": "Customer Info बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Customer Info [identifier: {{ param }}] तैयार है",
+            "updated": "एक Customer Info [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Customer Info [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Customer Info [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Customer Info"
+            },
+            "aliasName": "Alias Name",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "lastLogin": "Last Login",
+            "location": "Location",
+            "customerInfo": "Customer Info"
+        }
+    }
+}

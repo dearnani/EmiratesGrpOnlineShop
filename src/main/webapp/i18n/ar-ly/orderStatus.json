@@ -1,0 +1,12 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "OrderStatus" : {
+            "null": "",
+            "SAVE": "SAVE",
+            "SUCESS": "SUCESS",
+            "DELIVERY_FAIL": "DELIVERY_FAIL",
+            "PAYMENT_FAIL": "PAYMENT_FAIL",
+            "COMPLETE": "COMPLETE"
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.home.title">Customer Infos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-customer-info" [routerLink]="['/', { outlets: { popup: ['customer-info-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.home.createLabel">
+            Create new Customer Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="customerInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.aliasName">Alias Name</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.firstName">First Name</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.lastName">Last Name</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.email">Email</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.phoneNumber">Phone Number</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.lastLogin">Last Login</span></th>
+            <th><span jhiTranslate="emiratesGrpOnlineShopApp.customerInfo.location">Location</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let customerInfo of customerInfos ;trackBy: trackId">
+                <td><a [routerLink]="['../customer-info', customerInfo.id ]">{{customerInfo.id}}</a></td>
+                <td>{{customerInfo.aliasName}}</td>
+                <td>{{customerInfo.firstName}}</td>
+                <td>{{customerInfo.lastName}}</td>
+                <td>{{customerInfo.email}}</td>
+                <td>{{customerInfo.phoneNumber}}</td>
+                <td>{{customerInfo.lastLogin | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="customerInfo.location">
+                        <a [routerLink]="['../location', customerInfo.location?.id ]" >{{customerInfo.location?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../customer-info', customerInfo.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'customer-info/'+ customerInfo.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'customer-info/'+ customerInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

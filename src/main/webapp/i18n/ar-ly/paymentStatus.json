@@ -1,0 +1,9 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "PaymentStatus" : {
+            "null": "",
+            "SUCCESS": "SUCCESS",
+            "FAIL": "FAIL"
+        }
+    }
+}

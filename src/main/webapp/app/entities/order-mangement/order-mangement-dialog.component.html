@@ -1,0 +1,88 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myOrderMangementLabel" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.home.createOrEditLabel">Create or edit a Order Mangement</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!orderMangement.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="orderMangement.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderId" for="field_orderId">Order Id</label>
+            <input type="number" class="form-control" name="orderId" id="field_orderId"
+                [(ngModel)]="orderMangement.orderId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productCode" for="field_productCode">Product Code</label>
+            <input type="number" class="form-control" name="productCode" id="field_productCode"
+                [(ngModel)]="orderMangement.productCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dealerCode" for="field_dealerCode">Dealer Code</label>
+            <input type="text" class="form-control" name="dealerCode" id="field_dealerCode"
+                [(ngModel)]="orderMangement.dealerCode"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.assignedPrice" for="field_assignedPrice">Assigned Price</label>
+            <input type="number" class="form-control" name="assignedPrice" id="field_assignedPrice"
+                [(ngModel)]="orderMangement.assignedPrice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.dearLocation" for="field_dearLocation">Dear Location</label>
+            <input type="text" class="form-control" name="dearLocation" id="field_dearLocation"
+                [(ngModel)]="orderMangement.dearLocation"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.orderStatus" for="field_orderStatus">Order Status</label>
+            <select class="form-control" name="orderStatus" [(ngModel)]="orderMangement.orderStatus" id="field_orderStatus" >
+                <option value="SAVE">{{'emiratesGrpOnlineShopApp.OrderStatus.SAVE' | translate}}</option>
+                <option value="SUCESS">{{'emiratesGrpOnlineShopApp.OrderStatus.SUCESS' | translate}}</option>
+                <option value="DELIVERY_FAIL">{{'emiratesGrpOnlineShopApp.OrderStatus.DELIVERY_FAIL' | translate}}</option>
+                <option value="PAYMENT_FAIL">{{'emiratesGrpOnlineShopApp.OrderStatus.PAYMENT_FAIL' | translate}}</option>
+                <option value="COMPLETE">{{'emiratesGrpOnlineShopApp.OrderStatus.COMPLETE' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentStatus" for="field_paymentStatus">Payment Status</label>
+            <select class="form-control" name="paymentStatus" [(ngModel)]="orderMangement.paymentStatus" id="field_paymentStatus" >
+                <option value="SUCCESS">{{'emiratesGrpOnlineShopApp.PaymentStatus.SUCCESS' | translate}}</option>
+                <option value="FAIL">{{'emiratesGrpOnlineShopApp.PaymentStatus.FAIL' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.productInfo" for="field_productInfo">Product Info</label>
+            <select class="form-control" id="field_productInfo" name="productInfo" [(ngModel)]="orderMangement.productInfo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="productInfoOption.id === orderMangement.productInfo?.id ? orderMangement.productInfo : productInfoOption" *ngFor="let productInfoOption of productinfos; trackBy: trackProductInfoById">{{productInfoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.paymentDetails" for="field_paymentDetails">Payment Details</label>
+            <select class="form-control" id="field_paymentDetails" name="paymentDetails" [(ngModel)]="orderMangement.paymentDetails" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="paymentDetailsOption.id === orderMangement.paymentDetails?.id ? orderMangement.paymentDetails : paymentDetailsOption" *ngFor="let paymentDetailsOption of paymentdetails; trackBy: trackPaymentDetailsById">{{paymentDetailsOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="emiratesGrpOnlineShopApp.orderMangement.customerInfo" for="field_customerInfo">Customer Info</label>
+            <select class="form-control" id="field_customerInfo" name="customerInfo" [(ngModel)]="orderMangement.customerInfo" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="customerInfoOption.id === orderMangement.customerInfo?.id ? orderMangement.customerInfo : customerInfoOption" *ngFor="let customerInfoOption of customerinfos; trackBy: trackCustomerInfoById">{{customerInfoOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

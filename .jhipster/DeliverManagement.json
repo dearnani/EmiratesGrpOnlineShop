@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "orderNumber",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "deliveryStatus",
+            "fieldType": "DeliveryStatus",
+            "fieldValues": "DISPATCHED,TRANSIT,RETURNED,DOORLOCKED,DELIVERED,UNDELIVERED"
+        }
+    ],
+    "changelogDate": "20170827010352",
+    "entityTableName": "deliver_management",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,35 @@
+
+<div *ngIf="deliverManagement">
+    <h2><span jhiTranslate="emiratesGrpOnlineShopApp.deliverManagement.detail.title">Deliver Management</span> {{deliverManagement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.deliverManagement.orderNumber">Order Number</span></dt>
+        <dd>
+            <span>{{deliverManagement.orderNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.deliverManagement.deliveryStatus">Delivery Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'emiratesGrpOnlineShopApp.DeliveryStatus.' + deliverManagement.deliveryStatus}}">{{deliverManagement.deliveryStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="emiratesGrpOnlineShopApp.deliverManagement.location">Location</span></dt>
+        <dd>
+            <div *ngIf="deliverManagement.location">
+                <a [routerLink]="['/location', deliverManagement.location?.id]">{{deliverManagement.location?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'deliver-management/'+ deliverManagement.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

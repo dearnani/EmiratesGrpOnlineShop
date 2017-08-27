@@ -1,0 +1,10 @@
+{
+    "emiratesGrpOnlineShopApp": {
+        "DealerStatus" : {
+            "null": "",
+            "ACIVE": "ACIVE",
+            "INACTIVE": "INACTIVE",
+            "BLOKED": "BLOKED"
+        }
+    }
+}
