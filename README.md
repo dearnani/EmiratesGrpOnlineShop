@@ -1,6 +1,10 @@
 # EmiratesGrpOnlineShop
 This application was generated using JHipster 4.7.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.7.0](https://jhipster.github.io/documentation-archive/v4.7.0).
 
+The following are the assumptions :
+Used MySQL as database, build the Shopping Online Service Entities, can be directly utilise these services. 
+
+
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
