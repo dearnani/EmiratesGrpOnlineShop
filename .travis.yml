@@ -1,9 +1,4 @@
 git update-index --chmod=+x mvnw
 language : java
-cache:
-  yarn: true
-  directories:
-    - node_modules
-script: "./mvnw --show-version --errors --batch-mode -Prun-its clean verify"
 
 
